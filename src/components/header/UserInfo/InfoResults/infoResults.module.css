@@ -1,0 +1,11 @@
+.infoResults__info {
+  font-family: 'Inter-Regular';
+  font-size: 10px;
+  color: var(--color-opacity);
+}
+
+.infoResults__result {
+  font-size: 14px;
+  font-weight: bold;
+  /* color: black; */
+}

@@ -1,0 +1,15 @@
+.logo {
+  width: 141px;
+  height: 93px;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  transition: all .3s;
+
+  overflow: hidden;
+}
+
+.logo:hover {
+  opacity: .4;
+}

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Inter-Regular';
+  src: local('Inter-Regular'),
+    url('./fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Medium';
+  src: local('Inter-Medium'),
+    url('./fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ferry';
+  src: local('Ferry'),
+    url('./fonts/Ferry.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  --color-light: #ffffff;
+  --color-main-dark: #029491;
+  --color-opacity: rgba(0, 0, 0, .4);
+  --color-opacity-light: rgba(217, 217, 217, .3);
+
+  --color-theme1: #8AC540;
+
+  --header-height: 93px;
+  --footer-height: 137px;
+
+  --font-size-small: 14px;
+}
+
+html {
+	scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter-Regular';
+  font-size: 18px;
+}

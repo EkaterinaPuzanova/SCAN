@@ -1,0 +1,30 @@
+.contactInfo {
+  width: 300px;
+  text-align: end;
+}
+
+.contactInfo__item {
+  list-style-type: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contactInfo__item:hover {
+  opacity: .7;
+}
+
+.contactInfo__copyright,
+a {
+  font-family: 'Inter-Regular';
+  font-size: var(--font-size-small);
+  color: var(--color-light);
+}
+
+.contactInfo__copyright {
+  margin-top: 15px;
+  font-size: 12px;
+}

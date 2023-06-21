@@ -1,0 +1,21 @@
+.userInfo {
+  width: 400px;
+  height: 63px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapperResults {
+  width: 175px;
+  height: 63px;
+  border-radius: 5px;
+  background: var(--color-opacity-light);
+}
+
+.wrapperResults,
+.wrapperAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

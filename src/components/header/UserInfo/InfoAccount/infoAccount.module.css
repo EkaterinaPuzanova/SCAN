@@ -1,0 +1,26 @@
+.infoAccount {
+  display: flex;
+  gap: 5px;
+  align-content: flex-end;
+  height: 32px;
+}
+
+.infoAccount__account {
+  text-align: end;
+  margin: 0;
+  padding: 0;
+}
+
+.account {
+  margin-bottom: -5px;
+  font-family: 'Inter-Regular';
+  font-size: 14px;
+  color: rgba(0, 0, 0, .7);
+}
+
+.infoAccount__foto {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: yellow;
+}

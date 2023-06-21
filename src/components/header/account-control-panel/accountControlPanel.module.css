@@ -1,0 +1,11 @@
+.accountControlPanel {
+  display: flex;
+  width: 302px;
+  height: 26px;
+}
+
+.verticalLine {
+  border-left: 2px solid var(--color-main-dark);
+  height: 26px;
+  opacity: .6;
+}

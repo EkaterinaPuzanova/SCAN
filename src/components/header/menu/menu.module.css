@@ -1,0 +1,21 @@
+.menu {
+  width: 236px;
+}
+
+.menu__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__item {
+  list-style-type: none;
+  font-family: 'Inter-Regular';
+  font-size: var(--font-size-small);
+
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.menu__item:hover {
+  opacity: .5;
+}
