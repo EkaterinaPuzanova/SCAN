@@ -25,10 +25,14 @@
 :root {
   --color-light: #ffffff;
   --color-main-dark: #029491;
+  --color-dark: #000000;
   --color-opacity: rgba(0, 0, 0, .4);
   --color-opacity-light: rgba(217, 217, 217, .3);
 
   --color-theme1: #8AC540;
+  --color-theme2: #5970FF;
+  --color-theme3: #FFB64F;
+  --color-theme4: #7CE3E1;
 
   --header-height: 93px;
   --footer-height: 137px;
@@ -50,4 +54,10 @@ html {
 body {
   font-family: 'Inter-Regular';
   font-size: 18px;
+}
+
+.title {
+  font-family: 'Ferry';
+  font-size: 60px;
+  color: black;
 }

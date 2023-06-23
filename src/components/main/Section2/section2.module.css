@@ -1,0 +1,13 @@
+.section2 {
+  margin-top: 109px;
+}
+
+.section2__wrapper {
+  height: calc(349px + 70px + 576px);
+  /* background: rgb(166, 154, 230); */
+}
+
+.section2__title {
+  font-size: 45px;
+  width: auto;
+}

@@ -1,0 +1,26 @@
+.section1__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section1__title {
+  margin-top: 55px;
+  width: 743px;
+}
+
+.section1__text {
+  width: 534px;
+  margin-top: 20px;
+  font-family: 'Inter-Regular';
+  font-size: 20px;
+}
+
+.section1__img {
+  width: 629px;
+  height: 620px;
+}
+/* 
+.button {
+  padding: 15px 64px;
+  background: var(--color-button-color);
+} */

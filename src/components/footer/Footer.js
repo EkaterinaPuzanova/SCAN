@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './footer.module.css';
-import Logo from '../UI/logo/Logo';
+import Logo from '../logo/Logo';
 import ContactInfo from './ContactInfo/ContactInfo';
 
 function Footer() {

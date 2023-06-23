@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './header.module.css';
 import Menu from './menu/Menu';
-import Logo from '../UI/logo/Logo';
+import Logo from '../logo/Logo';
 //import AccountControlPanel from './account-control-panel/AccountControlPanel';
 import UserInfo from './UserInfo/UserInfo';
 
