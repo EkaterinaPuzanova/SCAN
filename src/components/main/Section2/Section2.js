@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './section2.module.css';
 import Carousel from './Carousel/Carousel';
+import { ImageSection2 } from './assets/ImageSection2';
 
 function Section2() {
   return (
@@ -9,6 +10,9 @@ function Section2() {
         <div className={css.section2__wrapper}>
           <h2 className={`title ${css.section2__title}`}>ПОЧЕМУ ИМЕННО МЫ</h2>
           <Carousel />
+          <div className={css.section2__image}>
+            <ImageSection2 />
+          </div>
         </div>
       </div>
     </section>

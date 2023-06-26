@@ -19,6 +19,7 @@
 .slick-prev,
 .slick-next
 {
+    margin: 0 -15px;
     font-size: 0;
     line-height: 0;
 
@@ -111,14 +112,6 @@
 [dir='rtl'] .slick-next:before
 {
     content: '←';
-}
-
-.slick-prev {
-  padding-right: 10px;
-}
-
-.slick-next {
-  padding-left: 10px;
 }
 
 /* Dots */

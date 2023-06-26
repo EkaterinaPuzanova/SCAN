@@ -4,5 +4,106 @@
 
 .section3__wrapper {
   height: 664px;
-  background: rgb(113, 225, 117);
+}
+
+.section3__title {
+  font-size: 45px;
+  width: auto;
+}
+
+.section3__cards {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section3__card {
+  width: 415px;
+  height: 540px;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+}
+
+.section3__cardHeader {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  height: 132px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.section3__cardText {
+  margin-top: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.section3__cardImg {
+  width: 93px;
+  height: 83px;
+}
+
+.section3__cardTitle {
+  font-size: 30px;
+  font-family: 'Inter-Medium';
+  letter-spacing: 0.3px;
+}
+
+.section3__cardSubtTitle {
+  margin-top: 10px;
+  font-size: 17px;
+  font-family: 'Inter-Regular';
+  letter-spacing: 0.18px;
+}
+
+.section3__cardContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.section3__price {
+  font-size: 30px;
+  font-family: 'Inter-Medium';
+  letter-spacing: 0.3px;
+}
+
+.section3__price span {
+  margin-left: 19px;
+  font-size: 25px;
+  letter-spacing: 0.25px;
+  opacity: 0.5;
+  text-decoration-line: line-through;
+}
+
+.section3__text,
+.section3__item {
+  margin-top: 10px;
+  /* margin-left: 5px; */
+  font-size: 18px;
+  font-family: 'Inter-Regular';
+  letter-spacing: 0.18px;
+}
+
+.section3__text {
+  min-height: 21px;
+}
+
+.section3__description {
+  margin-top: 59px;
+  font-size: 20px;
+  font-family: 'Inter-Medium';
+  letter-spacing: 0.2px;
+}
+
+.section3__item {
+  list-style-type: none;
+}
+
+.section3__item:before {
+  content: url(./assets/iconMark.svg);
 }

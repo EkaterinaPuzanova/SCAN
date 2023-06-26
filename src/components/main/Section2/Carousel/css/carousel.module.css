@@ -1,6 +1,39 @@
 .carousel {
   margin: 60px auto 0;
-  width: 1281px;
+  width: auto;
   height: 225px;
-  /* background: blue; */
+}
+
+.slide {
+  margin: 15px auto;
+  padding: 20px;
+  width: 400px;
+  height: 225px;
+  background: rgb(255, 255, 255);
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+}
+
+.slide__img {
+  width: 65px;
+  height: 79px;
+}
+
+.slide__icon {
+  width: 65px;
+  height: 79px;
+}
+
+.slide__content {
+  margin-top: 12px;
+  width: 359px;
+  height: auto;
+}
+
+.slide__text {
+  color: #000;
+  font-size: 18px;
+  font-family: Inter;
+  letter-spacing: 0.18px;
 }

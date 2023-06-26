@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import css from './css/carousel.module.css';
 import './css/slick.css'; 
 import './css/slick-theme.css';
-import Slide from './Slide/Slide';
+import { data } from './assets/data';
 
 function Carousel() {
   const settings = {
@@ -33,12 +33,19 @@ function Carousel() {
     <div className={css.carousel}>
       <Slider {...settings}>
         
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
+        {data.map((item) => (
+          <div key={item.id}>
+            <div className={css.slide}>
+              <div className={css.slide__img}>
+                <img className={css.slide__icon} src={item.urlImg} alt='icon' />
+              </div>
+              <div className={css.slide__content}>
+                <p className={css.slide__text}>{item.content}</p>
+              </div>
+            </div>
+          </div>
+          
+        ))} 
         
       </Slider>
     </div>
