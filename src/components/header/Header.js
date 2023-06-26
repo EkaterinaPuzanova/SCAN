@@ -2,8 +2,8 @@ import React from 'react';
 import css from './header.module.css';
 import Menu from './menu/Menu';
 import Logo from '../logo/Logo';
-//import AccountControlPanel from './account-control-panel/AccountControlPanel';
-import UserInfo from './UserInfo/UserInfo';
+import AccountControlPanel from './account-control-panel/AccountControlPanel';
+//import UserInfo from './UserInfo/UserInfo';
 
 function Header() {
   return (
@@ -12,8 +12,8 @@ function Header() {
         <div className={css.header__wrapper}>
           <Logo data={{id: 'logoHeader', background: '#029491', color: '#ffffff'}} />
           <Menu />
-          {/* <AccountControlPanel /> */}
-          <UserInfo />
+          <AccountControlPanel />
+          {/* <UserInfo /> */}
         </div>
       </div>
   </header>

@@ -10,7 +10,7 @@ function Main() {
       <Section1 />
       <Section2 />
       <Section3 />
-  </main>
+    </main>
   )
 }
 

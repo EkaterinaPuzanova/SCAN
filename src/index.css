@@ -34,6 +34,7 @@
   --color-theme3: #FFB64F;
   --color-theme4: #7CE3E1;
   --color-theme5: #3BA5E0;
+  --color-theme6: #949494;
 
 
   --header-height: 93px;
@@ -56,6 +57,10 @@ html {
 body {
   font-family: 'Inter-Regular';
   font-size: 18px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .title {

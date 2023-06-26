@@ -9,10 +9,6 @@
   transition: all .3s;
 }
 
-a {
-  text-decoration: none;
-}
-
 .contactInfo__item:hover {
   opacity: .7;
 }
