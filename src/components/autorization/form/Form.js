@@ -11,48 +11,20 @@ function Form() {
     // < className={css.form} onSubmit={login}>
     <form className={css.form}>
       <div className={css.form__wrapperButton}>
-        <MyButton style={{borderBottom: `2px solid var(--color-main-dark)`,
-                          margin: '0',
-                          color:`var(--color-main-dark)`,
-                          width: '151px',
-                          fontSize: '16px',
-                          paddingBottom: '8px',
-                          borderRadius: '0'}}>Войти</MyButton>
-        <MyButton style={{width: '213px',
-                          margin: '0',
-                          borderBottom: `2px solid var(--color-opacity)`,
-                          fontSize: '16px',
-                          paddingBottom: '8px',
-                          borderRadius: '0'}}>Зарегистрироваться</MyButton>
+        <MyButton className={css.form__btnEnterSmall}>Войти</MyButton>
+        <MyButton className={css.form__btnEnterSmall + ' ' + css.form__btnLogin}>Зарегистрироваться</MyButton>
       </div>
-      <label for="login" className={css.label}>
+      <label htmlFor="login" className={css.label}>
         Логин или номер телефона:
         <MyInput id="login" type="text" placeholder=""/>
       </label>
-      <label for="password" className={css.label}>
+      <label htmlFor="password" className={css.label}>
         Пароль:
         <MyInput id="password" type="text" placeholder=""/>
       </label>
-      <MyButton style={{padding: '16px 0',
-                            borderRadius: '5px',
-                            color: 'white',
-                            background: `var(--color-theme2)`,
-                            fontFamily: 'Inter-Medium',
-                            fontSize: '22px',
-                            margin: '0',
-                            marginTop: '30px',
-                            width: '100%'
-                            }}>Войти</MyButton>
+      <MyButton className={css.form__btnEnter} disabled>Войти</MyButton>
       <div style={{textAlign: 'center'}}>
-        <MyButton style={{marginTop: '15px',
-                          //borderBottom: `2px solid var(--color-theme2)`,
-                          textDecoration: 'underline',
-                          //borderRadius: '0',
-                          // paddingBottom: '2px',
-                          padding: '0',
-                          color:`var(--color-theme2)`,
-                          width: '160px',
-                          fontSize: '14px'}}>Восставновить пароль</MyButton>
+        <MyButton className={css.form__btnRestore}>Восставновить пароль</MyButton>
       </div>
       <p className={css.form__explanation}>Войти через:</p>
       <ul className={css.form__loginLinks}>

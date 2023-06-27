@@ -7,7 +7,23 @@
   letter-spacing: 0.32px;
 }
 
-/* .buttonn {
+.form__btnEnterSmall {
+  border-bottom: 2px solid var(--color-main-dark);
+  margin: 0;
+  color: var(--color-main-dark);
+  width: 151px;
+  font-size: 16px;
+  padding-bottom: 8px;
+  border-radius: 0;
+}
+
+.form__btnLogin {
+  width: 213px;
+  color: var(--color-opacity);
+  border-bottom: 2px solid var(--color-opacity);
+}
+
+.form__btnEnter {
   width: 100%;
   padding: 15px 64px;
   background: var(--color-theme2);
@@ -15,8 +31,17 @@
   font-family: 'Inter-Medium';
   font-size: 22px;
   margin: 0;
-  margin-top: 55px;
-} */
+  margin-top: 30px;
+}
+
+.form__btnRestore {
+  margin-top: 15px;
+  text-decoration: underline;
+  padding: 0;
+  color: var(--color-theme2);
+  width: 160px;
+  font-size: 14px;
+}
 
 .form__wrapperButton {
   display: flex;

@@ -1,15 +1,17 @@
 import './App.css';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import AutorizationPage from './pages/AutorizationPage';
+import SearchPage from './pages/SearchPage';
+//import AutorizationPage from './pages/AutorizationPage';
 //import MainPages from './pages/MainPage';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <SearchPage />
       {/* <MainPages /> */}
-      <AutorizationPage />
+      {/* <AutorizationPage /> */}
       <Footer />
     </div>
   );
