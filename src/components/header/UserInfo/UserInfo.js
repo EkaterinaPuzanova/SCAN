@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './userInfo.module.css';
-import Loader from '../../UI/Loader/Loader';
+//import Loader from '../../UI/Loader/Loader';
 import InfoResults from './InfoResults/InfoResults';
 import InfoAccount from './InfoAccount/InfoAccount';
 
