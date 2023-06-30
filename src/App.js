@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
@@ -7,29 +7,39 @@ import Header from './components/header/Header';
 //import SearchPage from './pages/SearchPage';
 //import AutorizationPage from './pages/AutorizationPage';
 //import MainPages from './pages/MainPage';
-import { AuthContext } from "./context";
+import { Context } from "./context";
 import AppRouter from './components/AppRouter';
+import { useContext } from 'react';
+import { observer } from "mobx-react-lite";
+//import Store from './store/Store';
+
+
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
-  const [isLoading, setLoading] = useState(true);
+  // const [isAuth, setIsAuth] = useState(false);
+  // const [isLoading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem('auth')) {
+  //       setIsAuth(true)
+  //   }
+  //   setLoading(false);
+  // }, [])
+  const {store} = useContext(Context);
 
   useEffect(() => {
-    if (localStorage.getItem('auth')) {
-        setIsAuth(true)
-    }
-    setLoading(false);
+    store.checkAuth();
   }, [])
 
   return (
-    <AuthContext.Provider value={{
-      isAuth,
-      setIsAuth,
-      isLoading
-    }}>
+    // <Context.Provider value={{
+    //   store
+    // }}>
       
         <BrowserRouter>
           <div className="App">
+            {/* {store.isAuth ? 'yes' : 'not'} */}
+            {/* {store.isAuth ? 'ghbdtn' : 'hot'} */}
             <Header />
             {/* <ResultPage /> */}
             {/* <SearchPage /> */}
@@ -39,8 +49,8 @@ function App() {
           </div>
         </BrowserRouter>
       
-    </AuthContext.Provider>
+    // </Context.Provider>
   );
 }
 
-export default App;
+export default observer(App);

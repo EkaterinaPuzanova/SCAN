@@ -1,3 +1,6 @@
-import {createContext} from 'react'
+import {createContext} from 'react';
+// import Store from '../store/Store';
 
-export const AuthContext = createContext(null);
+// const store = new Store();
+
+export const Context = createContext(null);

@@ -1,18 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
 import css from './form.module.css';
 import MyInput from '../../UI/MyInput/MyInput';
 import MyButton from '../../UI/MyButton/MyButton';
 import iconLink1  from '../assets/iconLink1.svg';
 import iconLink2 from '../assets/iconLink2.svg';
 import iconLink3 from '../assets/iconLink3.svg';
+import { Context } from '../../../context';
+import { observer } from "mobx-react-lite";
 
 function Form() {
-  const [data, setData] = useState({login: '', password: ''})
+
+  const {store} = useContext(Context);
+
+  const [data, setData] = useState({login: '', password: ''});
 
   const getEnter = (e) => {
     e.preventDefault();
-    console.log(data);
-    setData({login: '', password: ''})
+    store.login(data.login, data.password);
+    setData({login: '', password: ''});
   }
 
   return (
@@ -55,4 +60,4 @@ function Form() {
   )
 }
 
-export default Form;
+export default observer(Form);

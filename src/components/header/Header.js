@@ -4,18 +4,21 @@ import Menu from './menu/Menu';
 import Logo from '../logo/Logo';
 import AccountControlPanel from './account-control-panel/AccountControlPanel';
 import UserInfo from './UserInfo/UserInfo';
-import { AuthContext } from '../../context';
+import { Context } from '../../context';
 import Loader from '../UI/Loader/Loader';
 import { NavLink } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 
 function Header() {
-  const {isAuth, isLoading} = useContext(AuthContext);
-    console.log(isAuth)
+  const {store} = useContext(Context);
 
-    if (isLoading) {
-        return <Loader width='24' height='24'/>
-    }
+  // const {isAuth, isLoading} = useContext(AuthContext);
+  //   console.log(isAuth)
+
+  //   if (isLoading) {
+  //       return <Loader width='24' height='24'/>
+  //   }
 
 
   return (
@@ -26,7 +29,7 @@ function Header() {
             <Logo data={{id: 'logoHeader', background: '#029491', color: '#ffffff'}} />
           </NavLink>
           <Menu />
-          {isAuth
+          {store.isAuth
           ?
           <UserInfo />
           :
@@ -38,4 +41,4 @@ function Header() {
   )
 }
 
-export default Header;
+export default observer(Header);
