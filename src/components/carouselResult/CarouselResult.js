@@ -33,25 +33,25 @@ function CarouselResult() {
     slidesToShow: 8,
     slidesToScroll: 8,
     variableWidth: true,
-    responsive: [
-      {
-          breakpoint: 600,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-          }
-      },
-      {
-          breakpoint: 480,
-          settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-          }
-      }
-  ]
+  //   responsive: [
+  //     {
+  //         breakpoint: 600,
+  //         settings: {
+  //             slidesToShow: 2,
+  //             slidesToScroll: 2
+  //         }
+  //     },
+  //     {
+  //         breakpoint: 480,
+  //         settings: {
+  //             slidesToShow: 1,
+  //             slidesToScroll: 1
+  //         }
+  //     }
+  // ]
   };
   return (
-    <div className={css.carouselResult}>
+    <div className={css.carouselResult} id='carouselResult'>
       <Slider {...settings}>
 
         {data.map((item) => (

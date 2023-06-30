@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import css from './form.module.css';
 import MyInput from '../../UI/MyInput/MyInput';
 import MyButton from '../../UI/MyButton/MyButton';
@@ -7,8 +7,15 @@ import iconLink2 from '../assets/iconLink2.svg';
 import iconLink3 from '../assets/iconLink3.svg';
 
 function Form() {
+  const [data, setData] = useState({login: '', password: ''})
+
+  const getEnter = (e) => {
+    e.preventDefault();
+    console.log(data);
+    setData({login: '', password: ''})
+  }
+
   return (
-    // < className={css.form} onSubmit={login}>
     <form className={css.form}>
       <div className={css.form__wrapperButton}>
         <MyButton className={css.form__btnEnterSmall}>Войти</MyButton>
@@ -16,13 +23,18 @@ function Form() {
       </div>
       <label htmlFor="login" className={css.label}>
         Логин или номер телефона:
-        <MyInput id="login" type="text" placeholder=""/>
+        <MyInput id="login" type="text" placeholder=""
+                  value={data.login}
+                  onChange={e => setData({...data, login: e.target.value})}/>
       </label>
       <label htmlFor="password" className={css.label}>
         Пароль:
-        <MyInput id="password" type="text" placeholder=""/>
+        <MyInput id="password" type="password" placeholder=""
+                  value={data.password}
+                  onChange={e => setData({...data, password: e.target.value})}/>
       </label>
-      <MyButton className={css.form__btnEnter} disabled>Войти</MyButton>
+      <MyButton className={css.form__btnEnter} 
+                  onClick={getEnter}>Войти</MyButton>
       <div style={{textAlign: 'center'}}>
         <MyButton className={css.form__btnRestore}>Восставновить пароль</MyButton>
       </div>
