@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import css from './section3.module.css';
 import MyButton from '../../UI/MyButton/MyButton';
 import { data } from './assets/data';
 import CurrentTariff from './CurrentTariff/CurrentTariff';
+import { Context } from '../../../context';
+import { observer } from "mobx-react-lite";
 
 function Section3() {
+  const {store} = useContext(Context);
+  console.log(store.currentTariff)
   return (
     <section className={css.section3}>
       <div className='container'>
@@ -13,7 +17,11 @@ function Section3() {
           <div className={css.section3__cards}>
 
           {data.map((item) => (
-            <div className={css.section3__card} key={item.id}>
+            <div className={css.section3__card} key={item.id} style={(store.isAuth && (item.cardTitle === store.currentTariff))
+                                                              ?
+                                                              {border: `2px solid ${item.back}`}
+                                                              :
+                                                              {}}>
               <div className={css.section3__cardHeader} style={{background: item.back}}>
                 <div className={css.section3__cardText} style={{color: item.color}}>
                   <p className={css.section3__cardTitle}>{item.cardTitle}</p>
@@ -24,7 +32,12 @@ function Section3() {
                 </div>
               </div>
               <div className={css.section3__cardContent}>
+                {(store.isAuth && (item.cardTitle === store.currentTariff))
+                ?
                 <CurrentTariff />
+                :
+                ''
+                }
                 <p className={css.section3__price}>{item.price1}<span>{item.price2}</span></p>
                 <p className={css.section3__text}>{item.text}</p>
                 <p className={css.section3__description}>В тариф входит:</p>
@@ -34,14 +47,19 @@ function Section3() {
                   <li className={css.section3__item}>&nbsp;{item.item3}</li>
                 </ul>
                 <MyButton style={{padding: '15px 64px',
-                            background: `var(--color-theme2)`,
-                            color: 'white',
-                            fontFamily: 'Inter-Medium',
-                            fontSize: '22px',
+                            background: `${(store.isAuth && (item.cardTitle === store.currentTariff)) ? `var(--color-theme9)` : `var(--color-theme2)`}`,
+                            color: `${(store.isAuth && (item.cardTitle === store.currentTariff)) ? `var(--color-dark)` : `var(--color-light)`}`,
+                            fontFamily: 'Inter-Regular',
+                            fontSize: '18px',
                             margin: '0',
                             marginTop: '55px',
                             width: '100%'
-                            }}>Подробнее</MyButton>
+                            }}>{(store.isAuth && (item.cardTitle === store.currentTariff))
+                                ?
+                                'Перейти в личный кабинет'
+                                :
+                                'Подробнее'}
+                </MyButton>
               </div>
             </div>
           ))}
@@ -55,4 +73,4 @@ function Section3() {
   )
 }
 
-export default Section3;
+export default observer(Section3);

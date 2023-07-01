@@ -5,7 +5,7 @@ import Logo from '../logo/Logo';
 import AccountControlPanel from './account-control-panel/AccountControlPanel';
 import UserInfo from './UserInfo/UserInfo';
 import { Context } from '../../context';
-import Loader from '../UI/Loader/Loader';
+//import Loader from '../UI/Loader/Loader';
 import { NavLink } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 

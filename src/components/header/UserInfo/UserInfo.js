@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import css from './userInfo.module.css';
-//import Loader from '../../UI/Loader/Loader';
+import Loader from '../../UI/Loader/Loader';
 import InfoResults from './InfoResults/InfoResults';
 import InfoAccount from './InfoAccount/InfoAccount';
+import { Context } from '../../../context';
+import { observer } from "mobx-react-lite";
 
 function UserInfo() {
+  const {store} = useContext(Context);
+
+  useEffect(() => {
+    store.getInfoAccount();
+  }, [])  
+  
   return (
     <div className={css.userInfo}>
       <div className={css.wrapperResults}>
+        {store.isLoading
+        ?
+        <Loader width='24' height='24'/>
+        :
         <InfoResults />
+        }
+        
         {/* <Loader width='24' height='24'/> */}
       </div>
       <div className={css.wrapperAccount}>
@@ -18,4 +32,4 @@ function UserInfo() {
   )
 }
 
-export default UserInfo;
+export default observer(UserInfo);

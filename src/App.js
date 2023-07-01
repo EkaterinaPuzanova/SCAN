@@ -11,6 +11,7 @@ import { Context } from "./context";
 import AppRouter from './components/AppRouter';
 import { useContext } from 'react';
 import { observer } from "mobx-react-lite";
+//import { useNavigate } from 'react-router-dom';
 //import Store from './store/Store';
 
 
@@ -25,13 +26,17 @@ function App() {
   //   }
   //   setLoading(false);
   // }, [])
+  
   const {store} = useContext(Context);
 
   useEffect(() => {
-    store.checkAuth();
+    if (localStorage.getItem(`token${localStorage.getItem('account')}`)) {
+      store.checkAuth();
+    }
   }, [])
 
   return (
+    
     // <Context.Provider value={{
     //   store
     // }}>

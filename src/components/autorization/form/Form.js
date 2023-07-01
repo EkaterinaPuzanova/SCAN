@@ -20,6 +20,15 @@ function Form() {
     setData({login: '', password: ''});
   }
 
+  const changeLogin = (value) => {
+    store.setCorrectPassword(true);
+    setData({...data, login: value})
+  }
+  const changePassword = (value) => {
+    store.setCorrectPassword(true);
+    setData({...data, password: value})
+  }
+
   return (
     <form className={css.form}>
       <div className={css.form__wrapperButton}>
@@ -30,16 +39,24 @@ function Form() {
         Логин или номер телефона:
         <MyInput id="login" type="text" placeholder=""
                   value={data.login}
-                  onChange={e => setData({...data, login: e.target.value})}/>
+                  onChange={e => changeLogin(e.target.value)}/>
       </label>
       <label htmlFor="password" className={css.label}>
         Пароль:
         <MyInput id="password" type="password" placeholder=""
                   value={data.password}
-                  onChange={e => setData({...data, password: e.target.value})}/>
+                  onChange={e => changePassword(e.target.value)}
+                  style={(!store.isCorrectPassword) ? {border: '2px solid red'} : {}}/>
+                  {(!store.isCorrectPassword)
+                  ?
+                  <p className={css.unCorrectPassword}>Неправильный пароль</p>
+                  :
+                  ''}
       </label>
-      <MyButton className={css.form__btnEnter} 
-                  onClick={getEnter}>Войти</MyButton>
+      <MyButton className={css.form__btnEnter}
+                  onClick={getEnter}
+                  disabled={!store.isCorrectPassword || !data.login || !data.password}>Войти</MyButton>
+      
       <div style={{textAlign: 'center'}}>
         <MyButton className={css.form__btnRestore}>Восставновить пароль</MyButton>
       </div>

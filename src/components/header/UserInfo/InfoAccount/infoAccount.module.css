@@ -19,8 +19,9 @@
 }
 
 .infoAccount__foto {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: yellow;
+  background: url('./assets/ava.svg') no-repeat;
+  background-size: 100% 100%;
 }

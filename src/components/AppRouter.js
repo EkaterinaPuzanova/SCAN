@@ -5,6 +5,7 @@ import { privateRoutes, publicRoutes } from "../router";
 import { Context } from "../context";
 //import Loader from "./UI/Loader/Loader";
 import MainPages from '../pages/MainPage';
+import { observer } from "mobx-react-lite";
 
 
 const AppRouter = () => {
@@ -43,4 +44,4 @@ const AppRouter = () => {
     )
 }
 
-export default AppRouter;
+export default observer(AppRouter);

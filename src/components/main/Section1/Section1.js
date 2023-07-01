@@ -4,9 +4,11 @@ import img from './assets/image.png';
 import MyButton from '../../UI/MyButton/MyButton';
 import { Context } from '../../../context';
 import { observer } from "mobx-react-lite";
+import { useNavigate } from 'react-router-dom';
 
 function Section1() {
   const {store} = useContext(Context);
+  const router = useNavigate();
 
   // const {isAuth} = useContext(AuthContext);
 
@@ -26,7 +28,8 @@ function Section1() {
                               fontSize: '22px',
                               margin: '0',
                               marginTop: '70px'
-                              }}>Запросить данные</MyButton>
+                              }}
+                      onClick={() => router('/search')}>Запросить данные</MyButton>
             :
             ''
             }
