@@ -9,10 +9,9 @@ const store = new Store();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Context.Provider value={{
-    store
-  }}>
+  <Context.Provider value={{store}}>
     <App />
   </Context.Provider>
+
 );
 

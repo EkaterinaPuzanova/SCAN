@@ -8,6 +8,7 @@
 .formSearch__wrapperSelect {
   width: 405px;
   height: 460px;
+  position: relative;
 }
 
 .formSearch__wrapperCheckbox {
@@ -181,4 +182,27 @@ fieldset {
   margin: 0;
   height: 59px;
   width: 100%;
+}
+
+.formSearch__MyButton:disabled {
+  opacity:  .5;
+  cursor: default;
+}
+
+.unCorrect,
+.unCorrectDate {
+  position: absolute;
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}
+
+.unCorrect {
+  top: 86px;
+  left: 3px;
+}
+
+.unCorrectDate {
+  top: 434px;
+  left: 93px;
 }

@@ -30,10 +30,15 @@ function App() {
   const {store} = useContext(Context);
 
   useEffect(() => {
+    console.log(store.isAuth)
     if (localStorage.getItem(`token${localStorage.getItem('account')}`)) {
       store.checkAuth();
     }
   }, [])
+
+  if (localStorage.getItem(`token${localStorage.getItem('account')}`) && !store.isCheck ) {
+    return <div>Загрузка...</div>
+  }
 
   return (
     
@@ -43,6 +48,7 @@ function App() {
       
         <BrowserRouter>
           <div className="App">
+
             {/* {store.isAuth ? 'yes' : 'not'} */}
             {/* {store.isAuth ? 'ghbdtn' : 'hot'} */}
             <Header />
