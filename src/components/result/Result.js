@@ -5,6 +5,7 @@ import Documents from '../documents/Documents';
 import CarouselResult from '../carouselResult/CarouselResult';
 
 function Result() {
+
   return (
     <main className={css.result}>
       <div className='container'>
@@ -19,7 +20,7 @@ function Result() {
           </div>
           <div className={css.result__wrapperCarousel}>
             <h3 className={css.result__titleSecond}>Общая сводка</h3>
-            <p className={css.result__explanationSecond}>Найдено 4 221 вариантов</p>
+            {/* <p className={css.result__explanationSecond}>Найдено {store.resultSumDocuments} вариантов</p> */}
             <CarouselResult />
           </div>
           <div className={css.result__wrapperDocuments}>
@@ -32,4 +33,4 @@ function Result() {
   )
 }
 
-export default Result;
+export default (Result);

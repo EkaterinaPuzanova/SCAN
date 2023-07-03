@@ -29,6 +29,10 @@
 #carouselResult .slick-slide {
   height: 138px;
 }
+
+#carouselResult .slick-slider {
+  margin-top: 25px;
+}
 /* .slick-slide {
   margin: 0 0; 
 }  */
