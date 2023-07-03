@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Slider from "react-slick";
 import css from './css/carouselResult.module.css';
 import './css/slick.css'; 
@@ -9,7 +9,7 @@ import { observer } from "mobx-react-lite";
 
 
 function CarouselResult() {
-  
+
   const {store} = useContext(Context);
   const arr = [];
   const arrTotalDocuments = [];

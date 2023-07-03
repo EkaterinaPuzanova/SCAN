@@ -2,6 +2,7 @@ import {makeAutoObservable} from "mobx";
 import AuthService from "../services/AuthService";
 import AccountInfo from "../services/AccountInfo";
 import ObjectSearch from "../services/ObjectSearch";
+import ObjectSearchDate from "../services/ObjectSearchDate";
 
 
 export default class Store {
@@ -13,9 +14,10 @@ export default class Store {
     currentTariff = 'Beginner';
     isCorrectPassword = true;
     isFindResult = false;
+    resultObjectSearchDate;
     
     totalResultDocuments = 0;
-    resultObjectSearch = {};
+    resultObjectSearch;
 
     constructor() {
       makeAutoObservable(this);
@@ -25,9 +27,9 @@ export default class Store {
       this.isCheck = bool;
     }
 
-    setResultObjectSearch(res) {
-      this.resultObjectSearch = res;
-    }
+    // setResultObjectSearch(res) {
+    //   this.resultObjectSearch = res;
+    // }
     
     setIsFindResult(res) {
       this.isFindResult = res;
@@ -81,7 +83,20 @@ export default class Store {
       try {
         const response = await ObjectSearch.fetchObjectSearch(obj);
         console.log(response.data);
-        this.setResultObjectSearch(response.data);
+        this.resultObjectSearch = response.data;
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.setLoading(false);
+      }
+    }
+    
+    async getObjectSearchDate(obj) {
+      this.setLoading(true);
+      try {
+        const responseSearchDate = await ObjectSearchDate.fetchObjectSearchDate(obj);
+        console.log(responseSearchDate.data.items);
+        this.resultObjectSearchDate = responseSearchDate.data.items;
       } catch (e) {
         console.log(e);
       } finally {

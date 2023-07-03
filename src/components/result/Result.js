@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext }from 'react';
 import css from './result.module.css';
 import imgResult from './assets/imgResult.svg';
 import Documents from '../documents/Documents';
 import CarouselResult from '../carouselResult/CarouselResult';
+import { Context } from '../../context';
+import { observer } from "mobx-react-lite";
 
 function Result() {
+
+  const {store} = useContext(Context);
+
+  if (!store.isFindResult ) {
+    return <div className={css.error}>Необходимо ввести параметры для поиска</div>
+  }
 
   return (
     <main className={css.result}>
@@ -33,4 +41,4 @@ function Result() {
   )
 }
 
-export default (Result);
+export default observer(Result);

@@ -1,3 +1,13 @@
+
+.error {
+  width: 100%;
+  height: calc(100vh - var(--header-height) - var(--footer-height) - 50px);
+  text-align: center;
+  margin-top: 50px;
+  color: red;
+  font-size: 20px;
+}
+
 .result {
   width: 100%;
   /* min-height: calc(100vh - var(--header-height) - var(--footer-height) - 69px - 64px);  */
