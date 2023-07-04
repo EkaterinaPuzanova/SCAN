@@ -13,3 +13,11 @@
 .logo:hover {
   opacity: .4;
 }
+
+
+@media (max-width: 375px) {
+  .logo {
+    width: auto;
+    scale: .7;
+  }
+}

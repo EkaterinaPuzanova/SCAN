@@ -19,3 +19,11 @@
   justify-content: center;
   align-items: center;
 }
+
+
+@media (max-width: 375px) {
+  .wrapperResults {
+    width: 132px;
+    padding: 5px;
+  }
+}

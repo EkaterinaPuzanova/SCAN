@@ -14,23 +14,16 @@ function Carousel() {
     slidesToScroll: 3,
     responsive: [
       {
-          breakpoint: 600,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-          }
-      },
-      {
-          breakpoint: 480,
+          breakpoint: 400,
           settings: {
               slidesToShow: 1,
               slidesToScroll: 1
           }
       }
-  ]
+    ]
   };
   return (
-    <div className={css.carousel}>
+    <div className={css.carousel} id="carousel1">
       <Slider {...settings}>
         
         {data.map((item) => (

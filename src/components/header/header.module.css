@@ -3,4 +3,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.burger{
+  display: none;
+}
+.notBurger {
+  display: block;
+}
+.burgerBtn{
+  position: absolute;
+  right: 13px;
+  top: 32px;
+  /* display: none; */
+}
+
+@media (max-width: 375px) {
+  .burger{
+    display: block;
+  }
+  .notBurger {
+    display: none;
+  }
 }

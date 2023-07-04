@@ -45,3 +45,30 @@
   border-radius: 10px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
+
+@media (max-width: 375px) {
+  .autorization{
+    height: 1100px;
+  }
+  .form__title {
+    font-size: 22px;
+    width: 383px;
+  }
+
+  .autorization__formWrapper {
+    width: 335px;
+    height: 504px;
+    top: 218px;
+    right: 6px;
+  }
+
+  .autorization__iconWrapper{
+    top: 141px;
+    right: 181px;
+  }
+
+  .autorization__imgWrapper {
+    top: 766px;
+    left: 12px;
+  }
+}

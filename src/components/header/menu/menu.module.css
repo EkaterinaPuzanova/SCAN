@@ -19,3 +19,9 @@
 .menu__item:hover {
   opacity: .5;
 }
+
+@media (max-width: 375px) {
+  .menu {
+    display: none;
+  }
+}

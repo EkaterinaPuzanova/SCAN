@@ -203,3 +203,12 @@
     opacity: .75;
     color: black;
 }
+
+@media (max-width: 375px) {
+  #carousel1 .slick-prev {
+    left: 10px;
+  }
+  #carousel1 .slick-next{
+    right: 10px;
+  }
+}

@@ -24,3 +24,23 @@
   padding: 15px 64px;
   background: var(--color-button-color);
 } */
+
+@media (max-width: 375px) {
+  .section1__wrapper {
+    flex-direction: column;
+  }
+  .section1__title {
+    font-size: 28px;
+    width: 361px;
+  }
+  .section1__text {
+    font-size: 18px;
+    width: 327px;
+  }
+  .section1__img,
+  .section1__img img {
+    width: 347px;
+    height: 327px;
+  }
+  
+}

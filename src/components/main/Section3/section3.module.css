@@ -108,3 +108,43 @@
 .section3__item:before {
   content: url(./assets/iconMark.svg);
 }
+
+@media (max-width: 375px) {
+  .section3 {
+    margin-top: 55px;
+  }
+  .section3__title {
+    font-size: 28px;
+  }
+  .section3__cards {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .section3__wrapper {
+    height: auto;
+  }
+  .section3__card {
+    width: 335px;
+  }
+  .section3__cardTitle{
+    font-size: 20px;
+  }
+  .section3__cardSubtTitle {
+    font-size: 18px;
+  }
+  .section3__price {
+    font-size: 30px;
+  }
+  .section3__text {
+    font-size: 18px;
+  }
+  .section3__description {
+    margin-top: 36px;
+  }
+  .section3__cardContent {
+    padding: 10px;
+  }
+  .section3__item {
+    font-size: 16px;
+  }
+}

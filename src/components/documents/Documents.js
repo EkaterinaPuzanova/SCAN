@@ -42,11 +42,7 @@ function Documents() {
           
               
             </NavLink>
-            <div className={css.documents__info3} style={item.attributes.isTechNews
-                                                        ?
-                                                        'Технические новости'
-                                                        :
-                                                        (item.attributes.isAnnouncement ? 'Анонсы и события' : (item.attributes.isDigest ? 'Cводки новостей' : {background: 'white'}))}>
+            <div className={css.documents__info3} style={(item.attributes.isTechNews || item.attributes.isAnnouncement ||item.attributes.isDigest )? {}: {background: 'white'}}>
               {item.attributes.isTechNews
               ? 
               'Технические новости'

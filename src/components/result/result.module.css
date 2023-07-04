@@ -60,3 +60,25 @@
   font-family: 'Ferry';
   letter-spacing: 0.6px;
 }
+
+@media (max-width: 375px) {
+  .result__title {
+    font-size: 28px;
+    width: 344px;
+  }
+  .result__explanation {
+    font-size: 18px;
+    width: 344px;
+  }
+  .result__imgResult{
+    top:138px;
+    right: 66px;
+    width: 344px;
+    height: auto;
+    scale: 0.6;
+  }
+  .result__titleSecond {
+    margin-top: 248px;
+    font-size: 28px;
+  }
+}

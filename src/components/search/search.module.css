@@ -57,3 +57,31 @@
   width: 140px;
   height: 68px;
 }
+
+@media (max-width: 375px) {
+  .search{
+    height: 1305px;
+  }
+  .search__form {
+    width: 355px;
+    height: 650px;
+  }
+  .search__title {
+    font-size: 28px;
+    width: 361px;
+  }
+  .search__explanation {
+    font-size: 18px;
+    width: 297px;
+  }
+
+  .search__imgSearch {
+    bottom: -442px;
+    right: -50px;
+    scale: .8;
+  }
+  .search__iconDocument,
+  .search__iconFolders {
+    display: none;
+  }
+}

@@ -37,3 +37,19 @@
   font-family: Inter;
   letter-spacing: 0.18px;
 }
+
+@media (max-width: 375px) {
+  .carousel {
+    margin-top: 32px;
+    
+  }
+  .slide {
+    width: 274px;
+    height: 188px;
+  }
+  .slide__content {
+    width: 274px;
+  }
+  
+  
+}

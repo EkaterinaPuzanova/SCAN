@@ -141,3 +141,27 @@
   bottom: 25px;
   right: 30px;
 }
+
+
+@media (max-width: 375px) {
+  .documents__document {
+   
+    width: 335px;
+    height: auto;
+    
+  }
+  .documents__wrapperImg{
+    width: 297px;
+    height: 158px;
+  }
+  .documents__title {
+    width: 297px;
+    height: 69px;
+    font-size: 18px;
+  }
+  .documents__wrapperContent{
+    width: 290px;
+    height: 270px;
+    overflow: hidden;
+  }
+}

@@ -132,7 +132,7 @@ export default class Store {
         //this.setArrDocuments(this.resultObjectSearchDate.slice(0, 10))
         //console.log('enenend', this.arrDocuments[0])
         //this.getDocuments(this.arrDocuments[0]);
-        this.getDocuments(this.resultObjectSearchDate)
+        this.getDocuments(this.resultObjectSearchDate.slice(0,100))
         this.setIsFindResult(true)
         //УУУУУУУРРРРРРАААААА
       } catch (e) {

@@ -206,3 +206,27 @@ fieldset {
   top: 434px;
   left: 93px;
 }
+
+@media (max-width: 375px) {
+  .formSearch{
+    
+    padding: 10px;
+    width:345px;
+  }
+  .formSearch__wrapperCheckbox {
+    display: none;
+  }
+  .formSearch__wrapperButton{
+    bottom: -159px;
+    right: 16px;
+  }
+  .formSearch__MyInput{
+    width: 335px !important;
+  }
+  .selectWrapper__select{
+    width: 335px;
+  }
+  fieldset {
+    flex-direction: column;
+  }
+}

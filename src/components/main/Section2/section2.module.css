@@ -17,3 +17,30 @@
   width: 100%;
   height: 575px;
 }
+
+@media (max-width: 375px) {
+  .section2 {
+    margin-top: 55px;
+  }
+  .section2__title {
+    width: 274px;
+    font-size: 28px;
+  }
+  .section2__image {
+    margin-top: 50px;
+    width: 313px;
+    height: 375px;
+    overflow: hidden;
+    position: relative;
+  }
+  .section2__image img {
+    position: absolute;
+    top: -30%;
+    left: -83%;
+    scale: .6;
+  }
+  .section2__wrapper {
+    height: auto;
+    /* background: rgb(166, 154, 230); */
+  }
+}

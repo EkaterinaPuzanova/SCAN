@@ -9,3 +9,9 @@
   height: 26px;
   opacity: .6;
 }
+
+@media (max-width: 375px) {
+  /* .accountControlPanel {
+    display: none;
+  } */
+}
