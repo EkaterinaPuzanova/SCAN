@@ -61,14 +61,6 @@ function CarouselResult() {
             </div>
             
           ))
-          // [1,2,3,4,5,6,7,8,9,9,1,2,3,4,5,6,7,8,9,0,1,1,1,1,1,13,3,5,6,5].map((item) => (
-          //     <div key={item} style={{width: '140px', height: '138px'}}>
-          //       <div className={css.carouselResult__item}>
-          //         <p className={css.carouselResult__period}>{item}</p>
-          //         <p className={css.carouselResult__total}>{item}</p>
-          //         <p className={css.carouselResult__risks}>{item}</p>
-          //       </div>
-          //     </div>))
           }
       
       </Slider>

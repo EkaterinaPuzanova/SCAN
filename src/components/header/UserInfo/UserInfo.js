@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import css from './userInfo.module.css';
 import Loader from '../../UI/Loader/Loader';
 import InfoResults from './InfoResults/InfoResults';
@@ -22,8 +22,6 @@ function UserInfo() {
         :
         <InfoResults />
         }
-        
-        {/* <Loader width='24' height='24'/> */}
       </div>
       <div className={css.wrapperAccount}>
         <InfoAccount />

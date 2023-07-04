@@ -10,8 +10,6 @@ function Section1() {
   const {store} = useContext(Context);
   const router = useNavigate();
 
-  // const {isAuth} = useContext(AuthContext);
-
   return (
     <section className={css.section1}>
       <div className='container'>

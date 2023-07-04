@@ -23,7 +23,6 @@ function Form() {
   const changeLogin = (value) => {
     store.setCorrectPassword(true);
     setData({...data, login: value})
-    //console.log(data.login)
   }
   const changePassword = (value) => {
     store.setCorrectPassword(true);

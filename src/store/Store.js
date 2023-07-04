@@ -18,7 +18,6 @@ export default class Store {
     isFindResult = false;
     isFindResultObjectSearch = false;
     isLoadedDocuments = false;
-    //isLoadedDocumentsMore = false;
     
     totalResultDocuments = 0;
     resultObjectSearch;
@@ -38,19 +37,10 @@ export default class Store {
       this.isError = bool;
     }
 
-    // setIsLoadedDocumentsMore(bool) {
-    //   this.isLoadedDocumentsMore = bool;
-    // }
-
     setDocuments(arr) {
       this.documents = [...this.documents, arr] 
     }
 
-    // setResultObjectSearch(res) {
-    //   this.resultObjectSearch = res;
-    // }
-    
-    
     setIsFindResult(res) {
       this.isFindResult = res;
     }
@@ -117,7 +107,6 @@ export default class Store {
         console.log(e);
       } finally {
         this.setLoading(false);
-        // this.setIsFindResultObjectSearch(true)
       }
     }
     
@@ -125,13 +114,7 @@ export default class Store {
       this.setLoading(true);
       try {
         const responseSearchDate = await ObjectSearchDate.fetchObjectSearchDate(obj);
-        //console.log(responseSearchDate.data.items);
         this.resultObjectSearchDate = responseSearchDate.data.items.map((item) => (item.encodedId));
-        // this.resultObjectSearchDate.map((item) => (item.encodedId))
-        //console.log('rrerererwer', this.resultObjectSearchDate.slice(0, 10))
-        //this.setArrDocuments(this.resultObjectSearchDate.slice(0, 10))
-        //console.log('enenend', this.arrDocuments[0])
-        //this.getDocuments(this.arrDocuments[0]);
         this.getDocuments(this.resultObjectSearchDate.slice(0,100))
         this.setIsFindResult(true)
         //УУУУУУУРРРРРРАААААА
@@ -139,7 +122,6 @@ export default class Store {
         console.log(e);
       } finally {
         this.setLoading(false);
-        // this.setIsFindResult(true)
       }
     }
 
@@ -149,7 +131,6 @@ export default class Store {
         console.log(66556565656546, response.data);
         this.setDocuments(response.data.map((item) => (item.ok)));
         console.log(this.documents);
-        //this.setIsLoadedDocumentsMore(true);
       } catch (e) {
         console.log(e);
       } finally {

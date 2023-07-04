@@ -11,7 +11,6 @@ function Section2() {
           <h2 className={`title ${css.section2__title}`}>ПОЧЕМУ ИМЕННО МЫ</h2>
           <Carousel />
           <div className={css.section2__image}>
-            {/* <ImageSection2 /> */}
             <img src={img} alt="img-section2" />
           </div>
         </div>

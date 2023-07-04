@@ -74,7 +74,6 @@ function FormSearch() {
                 type="number"
                 placeholder="10 цифр"
                 value={search.inn}
-                // onfocus={setInnUncorrect(false)}
                 onChange={(e) => {setSearch({...search, inn: e.target.value}); setInnUncorrect(false) }}/>
           {innUncorrect ?
             <p className={css.unCorrect}>Введите корректные данные</p> : ''}

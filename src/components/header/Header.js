@@ -1,11 +1,10 @@
-import React, { useContext, useState , useEffect} from 'react';
+import React, { useContext, useState } from 'react';
 import css from './header.module.css';
 import Menu from './menu/Menu';
 import Logo from '../logo/Logo';
 import AccountControlPanel from './account-control-panel/AccountControlPanel';
 import UserInfo from './UserInfo/UserInfo';
 import { Context } from '../../context';
-//import Loader from '../UI/Loader/Loader';
 import { NavLink } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import burger from "./burger.svg";
@@ -17,14 +16,6 @@ import InfoResults from './UserInfo/InfoResults/InfoResults';
 function Header() {
   const {store} = useContext(Context);
   const [modal, setModal] = useState(false);
- 
-  // const {isAuth, isLoading} = useContext(AuthContext);
-  //   console.log(isAuth)
-
-  //   if (isLoading) {
-  //       return <Loader width='24' height='24'/>
-  //   }
- 
 
   return (
     <header className={css.header}>
@@ -56,36 +47,6 @@ function Header() {
               <AccountControlPanel />
               }
           </div>
-          
-          {/* {window.innerWidth <= 340 ?
-          <div>
-              <button className={css.burger} onClick={() => setModal(true)}>
-                <img src={burger} alt="burger" />
-              </button>
-              {store.isAuth? <InfoResults />: ''}
-              <MyModal visible={modal} setVisible={setModal}>
-                {store.isAuth
-                ?
-                <InfoAccount />
-                :
-                <AccountControlPanel />
-                }
-              </MyModal>
-              </div>
-          :
-          store.isAuth
-            ?
-            <UserInfo />
-            :
-            <AccountControlPanel />
-          }
-           */}
-          {/* {store.isAuth
-          ?
-          <UserInfo />
-          :
-          <AccountControlPanel />
-          } */}
         </div>
       </div>
   </header>

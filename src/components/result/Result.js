@@ -14,10 +14,6 @@ function Result() {
     return <div className={css.error}>Необходимо ввести параметры для поиска</div>
   }
 
-  // if (!store.isFindResult && store.isLoading) {
-  //   return <div className={css.error}>Загрузка</div>
-  // }
-
   return (
     <main className={css.result}>
       <div className='container'>
