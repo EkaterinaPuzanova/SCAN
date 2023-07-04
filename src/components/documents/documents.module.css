@@ -37,6 +37,10 @@
   width: 305px;
 }
 
+.formDocuments__MyButton:disabled {
+  display: none;
+}
+
 .documents__document {
   position: relative;
   padding: 19px 30px;

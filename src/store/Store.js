@@ -18,11 +18,12 @@ export default class Store {
     isFindResult = false;
     isFindResultObjectSearch = false;
     isLoadedDocuments = false;
+    //isLoadedDocumentsMore = false;
     
     totalResultDocuments = 0;
     resultObjectSearch;
     resultObjectSearchDate;
-    documents;
+    documents = [];
     arrDocuments = [];
 
     constructor() {
@@ -37,12 +38,18 @@ export default class Store {
       this.isError = bool;
     }
 
+    // setIsLoadedDocumentsMore(bool) {
+    //   this.isLoadedDocumentsMore = bool;
+    // }
+
+    setDocuments(arr) {
+      this.documents = [...this.documents, arr] 
+    }
+
     // setResultObjectSearch(res) {
     //   this.resultObjectSearch = res;
     // }
-    setArrDocuments(arr) {
-      this.arrDocuments = [...this.arrDocuments, arr];
-    }
+    
     
     setIsFindResult(res) {
       this.isFindResult = res;
@@ -125,7 +132,7 @@ export default class Store {
         //this.setArrDocuments(this.resultObjectSearchDate.slice(0, 10))
         //console.log('enenend', this.arrDocuments[0])
         //this.getDocuments(this.arrDocuments[0]);
-        this.getDocuments(this.resultObjectSearchDate.slice(0, 10))
+        this.getDocuments(this.resultObjectSearchDate)
         this.setIsFindResult(true)
         //УУУУУУУРРРРРРАААААА
       } catch (e) {
@@ -140,8 +147,9 @@ export default class Store {
       try {
         const response = await Documents.fetchDocuments(arr);
         console.log(66556565656546, response.data);
-        this.documents = response.data.map((item) => (item.ok));
+        this.setDocuments(response.data.map((item) => (item.ok)));
         console.log(this.documents);
+        //this.setIsLoadedDocumentsMore(true);
       } catch (e) {
         console.log(e);
       } finally {
