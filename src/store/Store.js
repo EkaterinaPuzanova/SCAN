@@ -3,6 +3,7 @@ import AuthService from "../services/AuthService";
 import AccountInfo from "../services/AccountInfo";
 import ObjectSearch from "../services/ObjectSearch";
 import ObjectSearchDate from "../services/ObjectSearchDate";
+import Documents from "../services/Documents";
 
 
 export default class Store {
@@ -13,11 +14,16 @@ export default class Store {
     companyLimit = 0;
     currentTariff = 'Beginner';
     isCorrectPassword = true;
+    isError = false;
     isFindResult = false;
-    resultObjectSearchDate;
+    isFindResultObjectSearch = false;
+    isLoadedDocuments = false;
     
     totalResultDocuments = 0;
     resultObjectSearch;
+    resultObjectSearchDate;
+    documents;
+    arrDocuments = [];
 
     constructor() {
       makeAutoObservable(this);
@@ -27,12 +33,27 @@ export default class Store {
       this.isCheck = bool;
     }
 
+    setIsError(bool) {
+      this.isError = bool;
+    }
+
     // setResultObjectSearch(res) {
     //   this.resultObjectSearch = res;
     // }
+    setArrDocuments(arr) {
+      this.arrDocuments = [...this.arrDocuments, arr];
+    }
     
     setIsFindResult(res) {
       this.isFindResult = res;
+    }
+
+    setIsLoadedDocuments(bool) {
+      this.isLoadedDocuments = bool;
+    }
+
+    setIsFindResultObjectSearch(bool) {
+      this.isFindResultObjectSearch = bool;
     }
 
     setTotalResultDocuments(res) {
@@ -84,10 +105,12 @@ export default class Store {
         const response = await ObjectSearch.fetchObjectSearch(obj);
         console.log(response.data);
         this.resultObjectSearch = response.data;
+        this.setIsFindResultObjectSearch(true)
       } catch (e) {
         console.log(e);
       } finally {
         this.setLoading(false);
+        // this.setIsFindResultObjectSearch(true)
       }
     }
     
@@ -95,12 +118,34 @@ export default class Store {
       this.setLoading(true);
       try {
         const responseSearchDate = await ObjectSearchDate.fetchObjectSearchDate(obj);
-        console.log(responseSearchDate.data.items);
-        this.resultObjectSearchDate = responseSearchDate.data.items;
+        //console.log(responseSearchDate.data.items);
+        this.resultObjectSearchDate = responseSearchDate.data.items.map((item) => (item.encodedId));
+        // this.resultObjectSearchDate.map((item) => (item.encodedId))
+        //console.log('rrerererwer', this.resultObjectSearchDate.slice(0, 10))
+        //this.setArrDocuments(this.resultObjectSearchDate.slice(0, 10))
+        //console.log('enenend', this.arrDocuments[0])
+        //this.getDocuments(this.arrDocuments[0]);
+        this.getDocuments(this.resultObjectSearchDate.slice(0, 10))
+        this.setIsFindResult(true)
+        //УУУУУУУРРРРРРАААААА
       } catch (e) {
         console.log(e);
       } finally {
         this.setLoading(false);
+        // this.setIsFindResult(true)
+      }
+    }
+
+    async getDocuments(arr) {
+      try {
+        const response = await Documents.fetchDocuments(arr);
+        console.log(66556565656546, response.data);
+        this.documents = response.data.map((item) => (item.ok));
+        console.log(this.documents);
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.setIsLoadedDocuments(true);
       }
     }
 

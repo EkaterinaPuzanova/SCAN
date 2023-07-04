@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import css from './documents.module.css';
 import MyButton from '../UI/MyButton/MyButton';
-
+import { Context } from '../../context';
+import { observer } from "mobx-react-lite";
 
 import img1 from './img1.svg';
 
@@ -34,28 +35,44 @@ const data = [
 
 
 function Documents() {
-  
+
+  const {store} = useContext(Context);
+  // let arrDocuments = store.resultObjectSearchDate.map((item) => (item.encodedId));
+  // console.log(arrDocuments);
+
+  // useEffect(() => {
+  //   store.getDocuments(store.resultObjectSearchDate.slice(0, 10));
+  //   console.log('llol',store.documents)
+  // }, [])
+  // if (!store.isFindResult ) {
+  //   return <div className={css.error}>Идет поиск</div>
+  // }
+
   return (
     <div className={css.documents}>
       <div className={css.documents__wrapper}>
-        {data.map((item) => (
+        {/* {store.isLoadingDocuments
+        ?
+        <div className={css.error}>Идет поиск</div>
+        :         */}
+        {store.documents.map((item) => (
           <div className={css.documents__document} key={item.id}>
             <div className={css.documents__wrapperInfo1Info2}>
-              <p className={css.documents__Info1}>{item.info1}</p>
-              <p className={css.documents__Info2}>{item.info2}</p>
+              <p className={css.documents__Info1}>{new Date(item.issueDate).toLocaleDateString()}</p>
+              <p className={css.documents__Info2}>{item.source.name}</p>
             </div>
-            <h4 className={css.documents__title}>{item.h4}</h4>
+            <h4 className={css.documents__title}>{item.title.text}</h4>
             <div className={css.documents__info3}>
-              {item.info3}
+              {item.attributes.isTechNews}
             </div>
             <div className={css.documents__wrapperImg}>
-              <img className={css.imgDocument} src={item.urlImg} alt='imgDocument' />
+              <img className={css.imgDocument} src={'r'} alt='imgDocument' />
             </div>
             <div className={css.documents__wrapperContent}>
-              <p className={css.documents__content}>{item.content}</p>
+              <p className={css.documents__content}>wefd</p>
             </div>
             <MyButton className={css.documents__MyButton}>Читать в источнике</MyButton>
-            <p className={css.documents__info4}>{item.info4}</p>
+            <p className={css.documents__info4}>{item.attributes.wordCount} слова</p>
           </div>
         ))}
       </div>
@@ -66,4 +83,4 @@ function Documents() {
   )
 }
 
-export default Documents;
+export default observer(Documents);

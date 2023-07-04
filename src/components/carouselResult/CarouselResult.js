@@ -14,7 +14,7 @@ function CarouselResult() {
   const arr = [];
   const arrTotalDocuments = [];
 
-  if (!store.isLoading) {
+  if (store.isFindResultObjectSearch) {
     [...store.resultObjectSearch.data[1].data].reverse().map((item) => arr.push(item.value));
     [...store.resultObjectSearch.data[0].data].map((item) => arrTotalDocuments.push(item.value)); 
     store.setTotalResultDocuments(arrTotalDocuments.reduce((a, b) => a + b));
@@ -46,11 +46,11 @@ function CarouselResult() {
   };
   return (
     <div className={css.carouselResult} id='carouselResult'>
-      <p className={css.result__explanationSecond}>Найдено {!store.isLoading  ? store.totalResultDocuments : ''} вариантов</p>
+      <p className={css.result__explanationSecond}>Найдено {store.isFindResultObjectSearch  ? store.totalResultDocuments : ''} вариантов</p>
       <Slider {...settings}>
 
         {
-          store.isLoading
+          !store.isFindResultObjectSearch
           ?
           <div className={css.carouselResult__loader} >
             <Loader width='50' height='50'/>

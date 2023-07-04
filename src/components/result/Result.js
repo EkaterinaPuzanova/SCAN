@@ -10,9 +10,13 @@ function Result() {
 
   const {store} = useContext(Context);
 
-  if (!store.isFindResult ) {
+  if (!store.isError ) {
     return <div className={css.error}>Необходимо ввести параметры для поиска</div>
   }
+
+  // if (!store.isFindResult && store.isLoading) {
+  //   return <div className={css.error}>Загрузка</div>
+  // }
 
   return (
     <main className={css.result}>
@@ -33,7 +37,12 @@ function Result() {
           </div>
           <div className={css.result__wrapperDocuments}>
             <h3 className={css.result__titleSecond} style={{marginTop: '107px'}}>Список документов</h3>
+            {store.isLoadedDocuments
+            ?
             <Documents />
+            :
+            <div className={css.error} style={{color: 'black'}}>Идет загрузка...</div>
+            }
           </div>
         </div>
       </div> 

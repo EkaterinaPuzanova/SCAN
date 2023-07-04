@@ -38,8 +38,7 @@ function FormSearch() {
         (new Date(search.dateStart) <= new Date(search.dateEnd))) {
           store.getObjectSearch(search);
           store.getObjectSearchDate(search);
-          console.log(7777777777777, search);
-          store.setIsFindResult(true);
+          store.setIsError(true);
           router('/result');
         } 
     if ((!resultValidateInn) &&
