@@ -64,11 +64,16 @@
 }
 
 .documents__title {
+  /* font-family: 'Inter-Medium';
+  color: black; */
   width: 546px;
+  height: 62px;
+  overflow: hidden;
   margin-top: 24px;
   text-align: start;
   font-size: 26px;
   letter-spacing: 0.52px;
+  cursor: pointer;
 }
 
 .documents__info3 {
@@ -88,12 +93,20 @@
   margin-top: 17px;
   height: 158px;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .documents__wrapperContent {
   width: 581px;
   height: 228px;
   margin-top: 20px;
+}
+
+.imgDocument {
+  position: absolute;
+  top: -50%;
+  width:100%;
 }
 
 .documents__content {
